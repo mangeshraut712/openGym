@@ -18,14 +18,19 @@ git pull && docker compose pull && docker compose up -d
 
 ## Reporting a vulnerability
 
-Use GitHub's private vulnerability reporting — repo **Security** tab → **Report a vulnerability**:
+Use GitHub's private vulnerability reporting when it is enabled — **Security** tab →
+**Report a vulnerability**. Canonical project:
 
-<https://github.com/DuarteSantos8/openGym/security/advisories/new>
+<https://gitea.com/DuarteSantos/openGym>
+
+This GitHub mirror:
+
+<https://github.com/arvids-unavailable/openGym/security/advisories/new>
 
 > Private reporting has to be switched on in the repository settings for that link to work
 > (Settings → Advanced Security → Private vulnerability reporting). If it 404s, open a normal
-> issue saying only *"I need a private channel for a security report"* — no details, no repro —
-> and it will be enabled.
+> issue on the Gitea repo or this mirror saying only *"I need a private channel for a security
+> report"* — no details, no repro — and it will be enabled.
 
 Please don't put a working exploit in a public issue if it can be used against other people's
 instances. Everything else (a crash you can only trigger on your own box, a scanner warning)
@@ -86,6 +91,8 @@ Read this before hosting openGym for anyone other than yourself.
   random bytes generated on first run and written to `./data/secret` with mode `0600`
   (`api/server.js:34-36`). The cookie is `HttpOnly` and `SameSite=Lax`, and gets `Secure` **only
   when `ORIGIN` starts with `https:`** (`api/server.js:29`, `api/server.js:198-201`).
+  Older commits of this GitHub mirror included a generated `data/secret`; delete that file and
+  restart the API so a new key is written.
 - **Any user can end every session they have.** `POST /api/logout/all` increments that account's
   session version, and every authenticated request checks the version in the cookie against the
   one on the user record (`api/server.js:167`, `api/server.js:187-188`), so every cookie ever

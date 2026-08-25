@@ -39,11 +39,12 @@ No account on someone else's server, no subscription, no ads. Just `docker compo
 
 <div align="center">
 
-### [🌐 opengym.duarte-santos.ch](https://opengym.duarte-santos.ch) · [▶ Try the live demo](https://duartesantos8.github.io/openGym/)
+### [🌐 opengym.duarte-santos.ch](https://opengym.duarte-santos.ch) · [💬 Discord](https://discord.gg/e62jY6fwVb) · [📦 Canonical repo](https://gitea.com/DuarteSantos/openGym)
 
-No signup, nothing to install — it runs entirely in your browser on example data.<br>
-<sub>There's no server behind the demo, so passkey sign-in, sync across devices and the
-admin dashboard only exist in a self-hosted instance.</sub>
+This GitHub copy is a **mirror** while the original GitHub account is unreachable. Releases and
+discussion happen on [Gitea](https://gitea.com/DuarteSantos/openGym) and
+[Discord](https://discord.gg/e62jY6fwVb). The hosted site is the place to try the app and grab
+the Android APK — the old GitHub Pages demo URL 404s.
 
 </div>
 
@@ -78,7 +79,7 @@ as a home-screen app, passkey sign-in, offline support, sync across your phone a
 - 🔑 **Passkeys, not passwords** — Face ID / Touch ID / fingerprint login; each profile keeps its own data, synced across devices
 - 🛠️ **Admin dashboard** (optional) — for whoever runs the instance: who's training right now, per-user history, disable accounts, and invite-only signup. Off by default, so a fresh instance stays open with no admin
 - 🎨 **Designed, not assembled** — light/dark themes and 8 accent colors saved to your profile, over a hand-drawn icon set instead of emoji, so it looks the same on every phone
-- 🌍 **12 languages** — full UI translation (EN, DE, ES, FR, IT, PT, PL, TR, RU, ZH, KO, HI); exercise instructions localized in 10 of them, loaded on demand so the app stays fast
+- 🌍 **13 languages** — full UI translation (EN, DE, ES, FR, IT, PT, PT-BR, PL, TR, RU, ZH, KO, HI); exercise instructions localized in 10 of them, loaded on demand so the app stays fast
 - 📥 **Bring your history with you** — import from **FitNotes** (Android and iOS), **Strong** and **Hevy**, or body weight straight out of an **Apple Health** export. Exercise names are matched against the library and anything unrecognised becomes one of your own exercises, so nothing in the file is dropped
 - 📦 **Yours to keep** — one-tap JSON export/import, guest mode, **no telemetry**
 - 📱 **Standalone Android app** — the whole tracker as a sideloadable APK: no account, no server, data on the phone, native workout reminders ([download](https://opengym.duarte-santos.ch))
@@ -88,7 +89,8 @@ as a home-screen app, passkey sign-in, offline support, sync across your phone a
 You need [Docker](https://docs.docker.com/get-docker/) with Compose.
 
 ```bash
-git clone https://github.com/DuarteSantos8/openGym
+git clone https://gitea.com/DuarteSantos/openGym.git
+# or this mirror: git clone https://github.com/arvids-unavailable/openGym.git
 cd openGym
 cp .env.example .env
 docker compose pull   # grab prebuilt images (amd64 + arm64) — skip to build from source instead
@@ -102,6 +104,7 @@ a build step locally either way.
 
 > Want it reachable from your phone over the internet with passkeys? You'll need an HTTPS
 > domain — a two-line change in `.env`. See **[docs/SELF_HOSTING.md](docs/SELF_HOSTING.md)**.
+> Prefer Azure App Service instead of a machine you run? See **[docs/AZURE_APPSERVICE.md](docs/AZURE_APPSERVICE.md)**.
 
 ## Mobile app (no server at all)
 

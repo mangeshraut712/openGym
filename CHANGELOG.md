@@ -1,5 +1,29 @@
 # Changelog
 
+## Unreleased
+
+### Fixes
+
+- 🔐 **Stop tracking `data/`** — session secret, passkeys and user DB are generated at first run,
+  not shipped in git. Anyone who already cloned this mirror should delete `./data/secret` and
+  restart so a new key is written.
+- 📦 **Stop tracking exercise media** — `media/img` and `media/gif` are filled by the `media`
+  Compose service (or `scripts/fetch-media.sh`), matching the documented first-run download.
+- 🐳 **`docker compose up --build` works again** — the web service points at the repo-root
+  Dockerfile instead of a missing `web/Dockerfile`.
+- 🔑 **Passkeys on Chrome iOS** — capability detection no longer requires `navigator.credentials`.
+- 🔔 **Server-generated notifications follow the profile language** — rest-timer, test, and
+  workout-day reminders use the saved UI locale (including `pt-BR`) instead of always English.
+- 📄 **`.env.example` is in the tree** — `cp .env.example .env` in the self-hosting docs works.
+- 🔗 **Docs match this being a mirror** — Gitea + Discord as canonical, broken GitHub Pages
+  demo link replaced, clone URLs and Dockerfile layout corrected.
+
+### Features
+
+- 🌍 **Brazilian Portuguese UI** (`pt-BR`) as a separate locale from Portuguese (Portugal).
+- 🔢 **Live search-result counts** in the exercise library and picker.
+- ☁️ **Azure App Service** deploy path (`azd up`) documented under `docs/AZURE_APPSERVICE.md`.
+
 ## v1.2.4 — 2026-08-01
 
 The effort ratings you have been recording since v1.2.3 now answer questions, and bodyweight

@@ -3,15 +3,18 @@
 Thanks for taking a look! openGym is intentionally small and dependency-light, and the goal is
 to keep it that way — easy to read, easy to self-host.
 
+Canonical source and release announcements: [Gitea](https://gitea.com/DuarteSantos/openGym) and
+[Discord](https://discord.gg/e62jY6fwVb). This GitHub repository is a public mirror.
+
 ## Project layout
 
 ```
 frontend/  React + Vite app (src/views, src/components, src/store, src/lib). Builds to static files.
            android/ + ios/ are the Capacitor shells for the standalone mobile app (docs/MOBILE.md).
 api/       backend — server.js (Node, no framework), one dependency (@simplewebauthn/server).
-web/       multi-stage Dockerfile (builds frontend → nginx) + nginx.conf (serves app, proxies /api).
+Dockerfile repo-root multi-stage build (frontend → nginx). web/nginx.conf is copied into the image.
 media/     exercise img/gif (gitignored, fetched at runtime).
-docs/      self-hosting guide.
+docs/      self-hosting and Azure App Service guides.
 ```
 
 ## Running for development

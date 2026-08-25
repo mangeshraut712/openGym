@@ -3,7 +3,10 @@ export const IS_APPLE = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)
 export const IS_ANDROID = /Android/.test(navigator.userAgent)
 export const BIO = IS_APPLE ? 'Face ID / Touch ID' : IS_ANDROID ? 'fingerprint or face unlock' : 'your fingerprint, face or PIN'
 export const VAULT = IS_APPLE ? 'iCloud Keychain' : IS_ANDROID ? 'Google Password Manager' : 'your password manager'
-export const webauthnOK = () => !!(window.PublicKeyCredential && navigator.credentials)
+// PublicKeyCredential is the WebAuthn signal. Do not also require navigator.credentials:
+// some browsers expose WebAuthn while that generic Credential Management check is a
+// false negative (notably Chrome on iOS). create/get still surface real errors to the user.
+export const webauthnOK = () => typeof window.PublicKeyCredential !== 'undefined'
 
 export async function api(path, opts) {
   const r = await fetch(path, Object.assign({ headers: { 'Content-Type': 'application/json' } }, opts))

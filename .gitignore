@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Runtime data — session secret, passkeys, user DB (never commit)
+/data/*
+!/data/.gitkeep
+
+# Exercise media — downloaded at first `docker compose up` (~140 MB)
+/media/img/
+/media/gif/
+media/.DS_Store
+
+# Build output
+dist/
+build/
+out/
+.vite/
+*.local
+
+# Test coverage
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Capacitor / mobile builds
+frontend/android/.gradle/
+frontend/android/app/build/
+frontend/android/build/
+frontend/android/local.properties
+frontend/android/.idea/
+frontend/android/captures/
+frontend/android/*.keystore
+frontend/android/*.jks
+frontend/ios/App/Pods/
+frontend/ios/App/build/
+frontend/ios/DerivedData/
+xcuserdata/
+*.xcuserstate
+*.ipa
+*.apk
+*.aab
+
+# Docker
+.docker/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+.qodo/
+*.tsbuildinfo
+
+# Cursor / Codex instruction dumps
+.github/instructions/

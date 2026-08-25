@@ -89,7 +89,9 @@ that would simply install. Your free options:
   Screen*. Full-screen app, no expiry, plus sync and passkeys.
 - **Xcode free signing:** open `ios/` in Xcode with a free Apple ID as the team and run it
   onto your own iPhone. Apple expires the signature after 7 days; re-run from Xcode to renew.
-- **AltStore:** automates that 7-day re-signing over Wi-Fi via a Mac companion app.
+- **AltStore / sideload (community):** AltStore can re-sign a build you make from this
+  repo onto your own iPhone. This project does not publish an official AltStore source
+  listing; use the Xcode or AltStore path above if you want a native binary.
 
 ### Release notes for maintainers
 
