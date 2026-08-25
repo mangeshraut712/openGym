@@ -6,7 +6,8 @@ const media = process.env.MEDIA_TARGET || 'http://127.0.0.1:8888'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  // Project Pages lives at /<repo>/; relative './' breaks when the URL has no trailing slash.
+  base: process.env.VITE_BASE || './',
   server: {
     proxy: {
       '/api': { target: backend, changeOrigin: true },
@@ -14,5 +15,5 @@ export default defineConfig({
       '/gif': { target: media, changeOrigin: true }
     }
   },
-  build: { chunkSizeWarningLimit: 1500 }
+  build: { chunkSizeWarningLimit: 2000 }
 })

@@ -43,8 +43,12 @@ No account on someone else's server, no subscription, no ads. Just `docker compo
 
 This GitHub copy is a **mirror** while the original GitHub account is unreachable. Releases and
 discussion happen on [Gitea](https://gitea.com/DuarteSantos/openGym) and
-[Discord](https://discord.gg/e62jY6fwVb). The hosted site is the place to try the app and grab
-the Android APK — the old GitHub Pages demo URL 404s.
+[Discord](https://discord.gg/e62jY6fwVb).
+
+### [▶ Live demo](https://arvids-unavailable.github.io/openGym/) · [🌐 opengym.duarte-santos.ch](https://opengym.duarte-santos.ch)
+
+No signup — the Pages demo is a `VITE_DEMO=1` build that runs in the browser on example data.
+Passkey sign-in, sync and the admin dashboard only exist on a self-hosted instance.
 
 </div>
 

@@ -24,6 +24,8 @@ cp .env.example .env
 docker compose up -d --build      # api + web + media on :8080
 # frontend hot reload:
 cd frontend && npm install && npm run dev
+# GitHub Pages demo (no API, seeded guest profile):
+cd frontend && npm run build:demo && npm run preview
 # training logic (progression rules, 1RM, how a session is read back):
 cd frontend && npm test
 ```

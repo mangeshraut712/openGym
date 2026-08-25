@@ -15,8 +15,8 @@
 - 🔔 **Server-generated notifications follow the profile language** — rest-timer, test, and
   workout-day reminders use the saved UI locale (including `pt-BR`) instead of always English.
 - 📄 **`.env.example` is in the tree** — `cp .env.example .env` in the self-hosting docs works.
-- 🔗 **Docs match this being a mirror** — Gitea + Discord as canonical, broken GitHub Pages
-  demo link replaced, clone URLs and Dockerfile layout corrected.
+- 🔗 **Docs match this being a mirror** — Gitea + Discord as canonical; clone URLs and Dockerfile layout corrected.
+- ▶️ **GitHub Pages demo** — a `VITE_DEMO=1` workflow publishes the app instead of Jekyll-rendering the README. After merge: Settings → Pages → source **GitHub Actions**, or branch **`gh-pages`** / root.
 
 ### Features
 
